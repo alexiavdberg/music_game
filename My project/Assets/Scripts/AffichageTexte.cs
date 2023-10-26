@@ -10,12 +10,12 @@ public class AffichageTexte : MonoBehaviour
     private string[] textArray = new string[]
     {
         "M","O","N"," ","H","A","I","K","U"
-        
+
     };
 
     private void Start()
     {
-            if (textObject == null)
+        if (textObject == null)
         {
             Debug.LogError("Veuillez assigner un objet TextMeshProUGUI dans l'inspecteur Unity.");
             return;

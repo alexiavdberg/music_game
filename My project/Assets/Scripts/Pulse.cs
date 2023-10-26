@@ -2,16 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CirclePulse : MonoBehaviour
+public class Pulse : MonoBehaviour
 {
     private Transform pulseTransform;
     public float range = 3f;
-    public float rangeMax = 5f;
+    private float rangeMax = 5f;
     public float BPM = 60f;
-    public float timeSinceLastPulse = 0f;
-    public float rangeSpeed;
-    
-
+    private float timeSinceLastPulse = 0f;
+    private float rangeSpeed;
 
     private void Awake()
     {
@@ -31,7 +29,7 @@ public class CirclePulse : MonoBehaviour
         pulseTransform.localScale = new Vector3(range, range);
 
         timeSinceLastPulse += Time.deltaTime;
-        if (timeSinceLastPulse >= (60/BPM))
+        if (timeSinceLastPulse >= (60 / BPM))
         {
             range = rangeMax;
         }
