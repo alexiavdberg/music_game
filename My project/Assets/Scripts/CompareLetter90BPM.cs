@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class CompareLetter90BPM : MonoBehaviour
 {
@@ -15,7 +16,7 @@ public class CompareLetter90BPM : MonoBehaviour
     private string debut;  // Texte correctement saisi
     private string fin;  // Texte restant à saisir
     private float score = 0;
-    private float pourcentageScore;
+    public float pourcentageScore2;
     private float maxScore;
 
     private void Start()
@@ -65,11 +66,13 @@ public class CompareLetter90BPM : MonoBehaviour
         }
 
         typedLetter = (char)0;
-        pourcentageScore = (score*100)/maxScore;
+        pourcentageScore2 = (score*100)/maxScore;
+        AccesVariables._pourcentageScore2 = pourcentageScore2 ;
 
         if (fin.Length == 0)
         {
-            Debug.Log($"Finito! Score : {pourcentageScore}");
+            Debug.Log($"Finito! Score : {pourcentageScore2}");
+            SceneManager.LoadSceneAsync("EndScreen2");
         }
     }
 

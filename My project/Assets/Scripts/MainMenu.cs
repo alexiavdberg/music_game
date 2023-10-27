@@ -12,15 +12,27 @@ public class MainMenu : MonoBehaviour
 
     public void PlayLevelTwo()
     {
-        SceneManager.LoadSceneAsync("Level2_120BPM");
+        SceneManager.LoadSceneAsync("Level2_90BPM");
     }
 
     public void PlayLevelThree()
     {
-        SceneManager.LoadSceneAsync("Level3_180BPM");
+        SceneManager.LoadSceneAsync("Level3_120BPM");
     }
     public void BackToMenu()
     {
         SceneManager.LoadSceneAsync("MenuScene");
+    }
+    public void EndScreen1()
+    {
+        SceneManager.LoadSceneAsync("EndScreen1");
+    }
+    public void EndScreen2()
+    {
+        SceneManager.LoadSceneAsync("EndScreen2");
+    }
+    public void EndScreen3()
+    {
+        SceneManager.LoadSceneAsync("EndScreen3");
     }
 }
