@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class CompareLetter : MonoBehaviour
+public class CompareLetter60BPM : MonoBehaviour
 {
-    private string haiku = $"Téléphone en main";
+    private string haiku = $"Devant l’écran lisse\nJuste un épisode de plus\nNos yeux existent ";
     private int letterIndex = 0;
     private char typedLetter;
     private char currentLetter;
@@ -14,11 +14,15 @@ public class CompareLetter : MonoBehaviour
     public TextMeshProUGUI haiku_text;
     private string debut;  // Texte correctement saisi
     private string fin;  // Texte restant à saisir
+    private float score = 0;
+    private float pourcentageScore;
+    private float maxScore;
 
     private void Start()
     {
         debut = "";
         fin = haiku;
+        maxScore = haiku.Length;
         UpdateTextMeshPro();  // Mise à jour du TextMeshProUGUI
     }
 
@@ -60,12 +64,13 @@ public class CompareLetter : MonoBehaviour
             IncorrectLetter();
         }
 
+        typedLetter = (char)0;
+        pourcentageScore = (score*100)/maxScore;
+
         if (fin.Length == 0)
         {
-            Debug.Log("Finito!");
+            Debug.Log($"Finito! Score : {pourcentageScore}");
         }
-
-        typedLetter = (char)0;
     }
 
     private void UpdateTextMeshPro()
@@ -78,6 +83,7 @@ public class CompareLetter : MonoBehaviour
         debut += $"<color=green>{currentLetter}</color>";  // Ajoute la lettre correcte au texte correctement saisi
         fin = fin.Substring(1);  // Enlève la lettre correcte du texte restant
         UpdateTextMeshPro();  // Mise à jour de TextMeshProUGUI
+        score++;
     }
 
     private void IncorrectLetter()
