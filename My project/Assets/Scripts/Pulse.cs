@@ -5,7 +5,7 @@ using UnityEngine;
 public class Pulse : MonoBehaviour
 {
     private Transform pulseTransform;
-    public float range = 3f;
+    [HideInInspector] public float range = 3f;
     private float rangeMax = 5f;
     public float BPM = 60f;
     private float timeSinceLastPulse = 0f;
