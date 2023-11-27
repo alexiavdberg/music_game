@@ -21,12 +21,12 @@ EditorBuildSettings:
     path: Assets/Scenes/Level3_120BPM.unity
     guid: 88d8e28ce69e0794c814e3b11582a41f
   - enabled: 1
+    path: Assets/Scenes/EndScreen1.unity
+    guid: fcba782955fd0c849a696380dd8b619a
+  - enabled: 1
     path: Assets/Scenes/EndScreen2.unity
     guid: 9a800f5e271d81e4da4d0969857dc8de
   - enabled: 1
     path: Assets/Scenes/EndScreen3.unity
     guid: c919fb831cf2be6468058d1dd75912ce
-  - enabled: 1
-    path: Assets/Scenes/EndScreen1.unity
-    guid: fcba782955fd0c849a696380dd8b619a
   m_configObjects: {}
